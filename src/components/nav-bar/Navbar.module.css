@@ -1,0 +1,11 @@
+.navbar {
+  @apply flex items-center justify-between p-4 bg-background;
+}
+
+.navbar-link {
+  @apply text-foreground;
+}
+
+.navbar-link:hover {
+  color: var(--secondary);
+}

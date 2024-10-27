@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Link from "next/link";
+import { Navbar } from "@/components";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,22 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav className="navbar">
-          <Link href="/" className="text-primary text-xl hover:text-gold-500 no-underline">
-            NextJs CRUD APP
-          </Link>
-          <div className="flex gap-4">
-            <Link href="/about" className="text-foreground hover:text-gold-500">
-              About
-            </Link>
-            <Link
-              href="/contact"
-              className="text-foreground hover:text-gold-500"
-            >
-              Contact
-            </Link>
-          </div>
-        </nav>
+        <Navbar />
         <main className="container">{children}</main>
         <footer className="flex-center p-6 bg-background text-muted min-h-24">
           <div>Hyperlolo</div>
