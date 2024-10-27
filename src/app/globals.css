@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #1b1b1b;
+  --foreground: #e5e5e5;
+  --primary: #6b21a8; /* Dark purple */
+  --secondary: #bfa34b; /* Gold */
+  --accent: #10b981; /* Emerald green */
+  --muted: #a1a1aa; /* Muted silver */
+  --border-radius: 0.75rem;
+  --font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121212;
+    --foreground: #e4e4e7;
+    --primary: #7c3aed; /* Lighter purple for dark mode */
+    --secondary: #ffd700; /* Bright gold */
+    --accent: #14b8a6; /* Teal green */
+    --muted: #d1d5db; /* Light silver */
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-family);
+  @apply antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary);
+  @apply font-bold;
+}
+
+a {
+  color: var(--primary);
+  @apply underline;
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+button {
+  background-color: var(--primary);
+  color: var(--foreground);
+  @apply px-4 py-2 rounded-md shadow-md hover:bg-opacity-80 transition duration-300;
+  border-radius: var(--border-radius);
+}
+
+button.secondary {
+  background-color: var(--secondary);
+  color: var(--foreground);
+  @apply px-4 py-2 rounded-md shadow-md hover:bg-opacity-80 transition duration-300;
+  border-radius: var(--border-radius);
+}
+
+.container {
+  @apply mx-auto px-4;
+  max-width: 1024px;
+}
+
+.card {
+  background-color: var(--background);
+  color: var(--foreground);
+  @apply p-6 rounded-lg shadow-lg border border-gray-600;
+  border-radius: var(--border-radius);
+}
+
+.card:hover {
+  @apply shadow-xl;
+}
+
+.input {
+  @apply w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-opacity-50 focus:border-transparent focus:ring-purple-600 transition duration-300;
+  border-radius: var(--border-radius);
+}
+
+.form-group {
+  @apply mb-6;
+}
+
+/* Tailwind CSS utilities for responsiveness */
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-semibold py-2 px-4 rounded-lg hover:bg-opacity-80 transition duration-300;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white font-semibold py-2 px-4 rounded-lg hover:bg-opacity-80 transition duration-300;
+  }
+
+  .card {
+    @apply p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300;
+  }
+
+  .navbar {
+    @apply flex items-center justify-between p-4 bg-background;
+  }
+
+  .navbar a {
+    @apply text-foreground hover:text-secondary;
+  }
+}
+
+/* Modern utility-focused classes */
+@layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .grid-layout {
+    @apply grid gap-6;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .btn-transition {
+    @apply transition duration-300 ease-in-out;
+  }
+} 
