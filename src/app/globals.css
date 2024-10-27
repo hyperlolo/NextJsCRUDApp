@@ -103,7 +103,10 @@ button.secondary {
   }
 
   .navbar a {
-    @apply text-foreground hover:text-secondary;
+    @apply text-foreground;
+  }
+  .navbar a:hover {
+    color: var(--secondary);
   }
 }
 
