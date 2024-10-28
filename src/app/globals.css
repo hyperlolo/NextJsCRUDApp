@@ -15,6 +15,8 @@
   --note-blue: #93c5fd;
   --border-radius: 0.75rem;
   --font-family: "Poppins", Arial, Helvetica, sans-serif;
+  --text-light-bg: #1a1a1a; /* Text color for light background */
+  --text-dark-bg: #f1f1f1; /* Text color for dark background */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,6 +31,8 @@
     --note-pink: #f9a8d4;
     --note-green: #86efac;
     --note-blue: #93c5fd;
+    --text-light-bg: #1a1a1a;
+    --text-dark-bg: #f1f1f1;
   }
 }
 
@@ -115,10 +119,11 @@ button.secondary {
     @apply flex items-center justify-between p-4 bg-background;
   }
 
-  .navbar a {
-    @apply text-foreground;
+  .navbar-link {
+    @apply text-foreground no-underline transition duration-300;
   }
-  .navbar a:hover {
+
+  .navbar-link:hover {
     color: var(--secondary);
   }
 }
@@ -136,5 +141,13 @@ button.secondary {
 
   .btn-transition {
     @apply transition duration-300 ease-in-out;
+  }
+
+  .text-light-bg {
+    color: var(--text-light-bg);
+  }
+
+  .text-dark-bg {
+    color: var(--text-dark-bg);
   }
 }
