@@ -1,9 +1,18 @@
 .navbar {
   @apply flex items-center justify-between p-4 bg-background;
+
+  a {
+    color: var(--text-dark-bg);
+
+  }
+
+  a:hover {
+  color: var(--secondary);
+}
 }
 
 .navbar-link {
-  @apply text-foreground;
+  @apply text-foreground no-underline transition duration-300;
 }
 
 .navbar-link:hover {
