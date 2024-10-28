@@ -1,0 +1,7 @@
+.btn-primary {
+  @apply bg-primary text-foreground font-semibold py-2 px-4 rounded-md shadow-md hover:bg-opacity-80 transition duration-300;
+}
+
+.icon {
+  @apply mr-2;
+}
