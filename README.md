@@ -77,7 +77,8 @@ Next, create a new collection named "Notes" with the following fields:
 
 Also, make sure to unlock all the API rules for this collection to allow full access from the frontend.
 
-PocketBase will serve the backend at `http://127.0.0.1:8090` by default. Ensure this service is running while developing and testing the Next.js application.
+### Important Note
+Make sure to add `pb_data` and `pb_migrations` to your `.gitignore` file to prevent committing sensitive data. These folders contain database records and migration files, which shouldn't be included in version control for security reasons unless it is for educational purposes, such as this repository.
 
 ### Step 4: Start the Development Server
 
