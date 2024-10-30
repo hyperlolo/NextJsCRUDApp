@@ -1,10 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import styles from "./NoteCard.module.css";
 import { NoteData } from "@/utils/types";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import UpdateNote from "../update-note/update-note";
 
 interface NoteCardProps {
   note: NoteData;
@@ -15,14 +16,29 @@ export default function NoteCard({ children, note }: NoteCardProps) {
   const { id, title, content, created } = note || {};
   const router = useRouter();
 
+  const [isEditing, setIsEditing] = useState(false);
+
   function onDelete(event: React.MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
     event.stopPropagation();
-    console.log("called delete");
     fetch(`http://127.0.0.1:8090/api/collections/notes/records/${id}`, {
       method: "DELETE",
     });
     router.refresh();
+  }
+
+  function onEdit(event: React.MouseEvent<HTMLButtonElement>) {
+    event.preventDefault();
+    event.stopPropagation();
+    setIsEditing(true);
+  }
+
+  function handleEditClose() {
+    setIsEditing(false);
+  }
+
+  if (isEditing) {
+    return <UpdateNote note={note} onClose={handleEditClose} />;
   }
 
   return (
@@ -41,6 +57,11 @@ export default function NoteCard({ children, note }: NoteCardProps) {
           <div>{content}</div>
         </div>
         {children && <div className="note-children mt-4">{children}</div>}
+        <div className="flex justify-end flex-col mt-20">
+          <button className="btn-secondary" onClick={onEdit}>
+            Edit
+          </button>
+        </div>
       </div>
     </Link>
   );

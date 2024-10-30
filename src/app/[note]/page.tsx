@@ -41,7 +41,7 @@ export default async function NotePage({
         <div className="text-black text-xl font-medium pb-1 flex flex-row justify-center mb-6">
           Note
         </div>
-        <div className="flex flex-row max-w-vw flex-wrap justify-start">
+        <div className="flex flex-row max-w-vw flex-wrap justify-center">
           <div className={styles.noteCard}>
             <div className="note-header">
               <div className={styles.noteTitle}>{note.title}</div>
