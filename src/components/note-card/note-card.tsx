@@ -58,7 +58,7 @@ export default function NoteCard({ children, note }: NoteCardProps) {
         </div>
         {children && <div className="note-children mt-4">{children}</div>}
         <div className="flex justify-end flex-col mt-20">
-          <button className="btn-secondary" onClick={onEdit}>
+          <button className={styles.noteEditButton} onClick={onEdit}>
             Edit
           </button>
         </div>

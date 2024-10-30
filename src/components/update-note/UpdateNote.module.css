@@ -7,6 +7,19 @@
 
 .noteCard {
   @apply p-4 rounded-lg shadow-md border border-gray-400 relative transition max-w-sm flex flex-col ml-4 min-w-64 min-h-64 mb-4;
-  background-color: var(--note-yellow);
+  background-color: var(--note-green);
   border-radius: 0.75rem;
+}
+
+.updateNoteButtons {
+  @apply bottom-2 right-2 px-2 py-1 rounded-md font-semibold;
+  background-color: var(--secondary);
+  border: 2px solid var(--secondary);
+  color: var(--text-light-bg);
+}
+
+.saveUpdatesButton {
+  background-color: var(--primary);
+  color: var(--text-dark-bg);
+  border-color: var(--primary);
 }

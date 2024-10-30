@@ -60,10 +60,14 @@ export default function UpdateNote({ note, onClose }: UpdateNoteProps) {
           />
         </div>
         <div className="flex justify-between mt-1">
-          <button type="button" onClick={onClose} className="btn-secondary">
+          <button
+            type="button"
+            onClick={onClose}
+            className={styles.updateNoteButtons}
+          >
             Cancel
           </button>
-          <button type="submit" className="btn-primary">
+          <button type="submit" className={`${styles.updateNoteButtons} ${styles.saveUpdatesButton}`}>
             Save
           </button>
         </div>
