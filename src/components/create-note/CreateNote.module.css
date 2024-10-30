@@ -1,0 +1,8 @@
+.CreateNoteInput {
+  color: var(--text-light-bg);
+  border: 1px solid var(--text-light-bg);
+  padding: 5px;
+  border-radius: var(--border-radius);
+  /* border-color: black; */
+  @apply mb-4;
+}
