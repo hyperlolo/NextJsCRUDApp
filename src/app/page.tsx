@@ -1,4 +1,4 @@
-import { NoteCard } from "@/components";
+import { CreateNote, NoteCard } from "@/components";
 import { NoteData } from "@/utils/types";
 
 async function getNotes() {
@@ -18,15 +18,16 @@ async function getNotes() {
 export default async function Home() {
   const notes = await getNotes();
   return (
-    <div className="bg-white p-6 max-w-full shadow-md max-h-full">
+    <div className="bg-white p-6 max-w-full shadow-md max-h-full flex flex-col items-center">
       <div className="text-black text-xl font-medium pb-1 flex flex-row justify-center mb-6">
         Notes
       </div>
-      <div className="flex flex-row max-w-vw flex-wrap justify-start">
+      <div className="flex flex-row max-w-vw flex-wrap justify-start ml-14">
         {notes.map((note) => (
           <NoteCard note={note} key={note.id} />
         ))}
       </div>
+      <CreateNote />
     </div>
   );
 }
